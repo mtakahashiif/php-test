@@ -75,4 +75,17 @@ EOD;
 
 parse_and_emit_yaml($input);
 
+
+$input = <<<EOD
+文字列1: "Hello,YAML!"
+文字列2: !!str 10
+浮動小数点1: 10.0
+浮動小数点2: !!float 10
+ヌル: null
+ブーリアン1: Yes
+ブーリアン2: off
+EOD;
+
+parse_and_emit_yaml($input);
+
 ?>
