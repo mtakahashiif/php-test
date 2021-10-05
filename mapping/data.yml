@@ -1,0 +1,13 @@
+マップ:
+  key0: "value0"
+  key1: "value1"
+  key2: "value2"
+シーケンス:
+  - "value0"
+  - "value1"
+  - "value2"
+文字列: "10"
+ヌル: null
+ブーリアン: true
+整数: 10
+浮動小数点: 1.23015e+3

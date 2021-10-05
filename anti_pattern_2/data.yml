@@ -1,0 +1,2 @@
+int_value: !!int 10
+string_value: "\u3042\u3044\u3046\u3048\u304A"

@@ -1,0 +1,21 @@
+- hosts: localhost
+  tasks:
+    - name: Load YAML data
+      include_vars:
+        file: data.yml
+        name: data
+
+    - name: Print YAML data type (1) ... data from YAML file
+      ansible.builtin.debug:
+        msg: "{{ item.key }}: {{ item.value }}  <--- {{ item.value | type_debug }}"
+      loop: "{{ data | dict2items }}"
+
+    - name: Print YAML data type (2) ... data from vars
+      ansible.builtin.debug:
+        msg: "{{ text_in_vars }}: {{ text_in_vars }}  <--- {{ text_in_vars | type_debug }}"
+      vars:
+        text_in_vars: Text in vars
+
+    - name: Print YAML data type (3) ... data from gathered facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_os_family }}: {{ ansible_os_family }}  <--- {{ ansible_os_family | type_debug }}"
